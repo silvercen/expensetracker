@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/tracker")
+@RequestMapping
 public class ExpenseTrackerController {
 
     @Autowired

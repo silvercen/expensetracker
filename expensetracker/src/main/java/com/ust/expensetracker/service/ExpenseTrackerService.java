@@ -28,6 +28,7 @@ public class ExpenseTrackerService {
 
     private final JPAStreamer jpaStreamer;
 
+    @Autowired
     public ExpenseTrackerService(JPAStreamer jpaStreamer) {
         this.jpaStreamer = jpaStreamer;
     }
