@@ -34,7 +34,8 @@ public class ExpenseTrackerService {
 
     public double getAllIncomeByMonth(int month)
     {
-        return incomeRepo.findTotalIncomebyMonth(month);
+        return jpaStreamer.stream(Income.class).filter(income -> income.getDate().getMonthValue() == month)
+                .mapToDouble(Income::getAmount).sum();
     }
 
     public double getCostByDate(LocalDate date)

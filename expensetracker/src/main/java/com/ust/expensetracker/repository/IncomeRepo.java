@@ -14,7 +14,4 @@ import java.util.UUID;
 @Repository
 public interface IncomeRepo extends JpaRepository<Income,UUID> {
     public List<Income> findByDate(LocalDate date);
-
-    @Query("select coalesce(sum(Income.amount),0) from Income where function('MONTH', date) = :month")
-    public double findTotalIncomebyMonth(@Param("month") int month);
 }
